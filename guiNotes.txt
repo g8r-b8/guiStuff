@@ -1,0 +1,16 @@
+NON-UEFI:
+pacman -S archlinux-keyring #if things are going wrong
+pacman -S grub
+grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+####DESKTOP ENV####
+pacman -S xorg
+pacman -S gnome
+systemctl start gdm.service
+systemctl enable gdm.service
+systemctl enable NetworkManager.service
+
+exit
+shutdown now
+#remove usb and reboot
+
